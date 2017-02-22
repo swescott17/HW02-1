@@ -52,13 +52,44 @@ public:
 	 */
 	void save();
 
+// Ex1.6) Completed by Suhail Rajah
 private:
-	class Directory_Entry /* Exercise 1.6: Please complete the definition of the Directory_Entry class here. - Ed/Kent */
-	{
-	public:
-	
-	private:
+	class Directory_Entry
 
+	{
+
+	public:
+
+		Directory_Entry() {} // Default no-argument constructor
+
+		Directory_Entry(std::string the_name, std::string the_number) {
+
+			name = the_name;
+			number = the_number;
+
+		}
+
+		std::string get_name() const {
+
+			return name;
+
+		}
+
+		std::string get_number() const {
+
+			return number;
+
+		}
+
+		void set_number(const std::string& new_number) {
+
+			number = new_number;
+
+		}
+
+	private:
+		std::string name;
+		std::string number;
 	};
 
 	// Private Functions
