@@ -1,5 +1,6 @@
 #ifndef ARRAY_BASED_PD_H_
 #define ARRAY_BASED_PD_H_
+#include <iostream>
 #include <string>
 
 /** Specification file for the array-based phone directory.
@@ -46,10 +47,9 @@ public:
 		@return The person's name or an empty string if not in
 		the directory
 		*/
-	std::string remove_entry(const std::string& name);
+	void remove_entry(int index); //finished by Sara Wescott
+	int getSize();
 
-	/** Writes the contents of the directory to the data file.
-	 */
 	void save();
 
 // Ex1.6) Completed by Suhail Rajah
@@ -87,6 +87,7 @@ private:
 
 		}
 
+
 	private:
 		std::string name;
 		std::string number;
@@ -110,7 +111,6 @@ private:
 	/** Removes the entry at the given index.
 		@param index The index of the entry to be removed
 		*/
-	void remove_entry(int index);
 
 	/** Creates an new array of directory entries with twice the
 		capacity of the current one.

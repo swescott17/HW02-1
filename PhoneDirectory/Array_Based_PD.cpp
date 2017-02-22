@@ -15,7 +15,7 @@ using namespace std;
  */
 Phone_Directory::Phone_Directory() :
 size(0), capacity(100), the_directory(new Directory_Entry[100]),
-source_name("") {}
+source_name("phone.dat") {}
 
 /** Destroy the Phone_Directory
  */
@@ -48,6 +48,11 @@ void Phone_Directory::load_data(const string& source_name)
 		// Close the file.
 		in.close();
 	}
+}
+
+int Phone_Directory::getSize()
+{
+	return size;
 }
 
 /** Add an entry or change an existing entry.
@@ -113,13 +118,17 @@ void Phone_Directory::save()
 	@return That person's name or an empty string
 	if not in the directory
 	*/
-string Phone_Directory::remove_entry(const string& name) // Exercise 1.7: please complete the remove_entry() method - Ed/Kent
-{
+void Phone_Directory::remove_entry(int index) // Exercise 1.7: please complete the remove_entry() Sara Wescott
+{ //the book calls for it to be an integer
+	string m = NULL;
+	the_directory[index].set_number(m);
+	for (int i = index; i < size - 1; i++)
+	{
+			the_directory[i] = the_directory[i + 1];
+	}
 	// Hint: you can use the code below to shift names down in the directory to remove the selected entry specified by "index"
 	//for (int i = index; i < size - 1; i++)
 		//the_directory[i] = the_directory[i + 1];
-
-	return "";
 }
 
 // Private method implementation
